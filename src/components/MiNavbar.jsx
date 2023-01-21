@@ -4,9 +4,16 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import CartWidget from './CartWidget';
+import OrdersWidget from "./OrdersWidget";
+import { OrdersContext } from "../contexts/OrdersContext"
 
 
 export function MiNavbar() {
+ 
+  const { getCartCounter } = useContext(CartContext);
+  const { getTotalOrders } = useContext(OrdersContext);
+  const totalQuantity = getCartCounter();
+
 
   return (
     <Navbar bg="light" expand="lg">
@@ -23,7 +30,8 @@ export function MiNavbar() {
             <Nav.Link>Login</Nav.Link>
             <Nav.Link>Registrarse</Nav.Link>
             <Nav.Link as={Link} to="carrito"><CartWidget /> </Nav.Link>
-                
+            <CartWidget cartCounter={totalQuantity} />
+            {getTotalOrders() > 0 && <OrdersWidget />}  
           </Nav>
         </Navbar.Collapse>
       </Container>

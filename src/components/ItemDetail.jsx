@@ -1,6 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import ItemCount from './ItemCount';
-import { CartContext } from './CartContext';
+import { CartContext } from '../contexts/CartContext';
 import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2'

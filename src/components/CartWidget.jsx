@@ -1,6 +1,6 @@
 import { BsCart } from "react-icons/bs";
 import { useContext } from 'react';
-import { CartContext } from './CartContext';
+import { CartContext } from '../contexts/CartContext';
 
 const CartWidget = () => {
     const ctx = useContext(CartContext);

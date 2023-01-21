@@ -1,7 +1,7 @@
 
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
-import { CartContext } from './CartContext';
+import { CartContext } from '../contexts/CartContext';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { collection, doc, setDoc, serverTimestamp, updateDoc, increment } from "firebase/firestore";
@@ -97,6 +97,7 @@ import withReactContent from 'sweetalert2-react-content'
                         ORDER SUMMARY
                       <p>TOTAL: $ {ctx.calcSubTotal()}</p>
                       <Button onClick={createOrder}>CHECKOUT NOW</Button>
+                      <Button onClick={() => navigate("/checkout")}> Confirme su Compra</Button>
                       </div>
                     </div>
                     </>
